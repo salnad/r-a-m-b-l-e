@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/440a91449a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <!-- <script type="text/javascript" src='../scripts/ramble.js'></script> -->
+    <title>Journal Page</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+      <div class='nav-section'><!-- left side of nav bar-->
+        <a class="navbar-brand" href="register" {{ hideLogIn }}>log in</a>
+        <a {{ hideLogOut }} class="navbar-brand" href={{ logout_url }} >log out</a>
+      </div>
+
+      <a class="nav-link" id="rambleBtn" href="/"> r a m b l e <span class="sr-only">(current)</span></a>
+      <div class = "nav-section justify-content-end d-flex flex-row"><!-- right side of nav bar-->
+        <!-- <a class="navbar-brand" href="acct">Profile</a> -->
+        {{ first_name }} {{last_name}}
+        <a {{ hideLogOut }} href = "account"> <i class ="far fa-user fa-2x"></i></a>
+      </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <div class="d-flex flex-column bd-highlight mb-3 justify-content-center">
+      <div class="d-flex flex-row bd-highlight mb-3 justify-content-center"><h1>{{date}}</h1><br></div>
+      <div class="d-flex flex-row bd-highlight mb-3 justify-content-center"><h2>{{time}}</h2><br></div>
+    </div>
+
+    <div class="d-flex flex-row bd-highlight mb-3 mt-3 justify-content-center align-items-center">
+      <div class="card w-75" style = "background: rgb(255,255,255); background: linear-gradient(45deg, rgba({{r1}},{{g1}},{{b1}},0.75) 35%, rgba({{r2}},{{g2}},{{b2}},0.75) 100%); border-color: transparent;">
+        <div class="d-flex flex-row bd-highlight mb-3 mt-3 justify-content-center align-self-stretch">
+          <div class="card w-75" style = "background-color: rgb(256, 256, 256, 0.3)">
+            <div class="card-body" style = "background-color: rgb(256, 256, 256, 0.3)">
+              {{diary_entry}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+      <div class="card w-75">
+         <div class="card-body">
+            <h5 class="card-title">a n a l y s i s</h5>
+            <p>primary tones: {{p1}} {{p2}} </p>
+            <p>word count: {{word_count}} </p>
+
+          </div>
+       </div>
+     </div>
+  </body>
+</html>

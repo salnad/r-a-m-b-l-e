@@ -1,0 +1,26 @@
+#submitbtn{
+  background-color: transparent;
+  color: #87befd;
+  border: 1px solid #87befd;
+}
+
+#slider{
+  value: 0
+  color: #87befd
+}
+@mixin track() { /* common styles */ }
+
+body {
+  --fading: #bbb;
+  --impact: #f90
+}
+
+h2 { border-bottom: solid .125em var(--impact) }
+
+h6 { color: var(--fading) }
+
+[type='range']:focus { box-shadow: 0 0 2px var(--impact) }
+
+@mixin track() { background: var(--fading) }
+
+@mixin thumb() { background: var(--impact) }

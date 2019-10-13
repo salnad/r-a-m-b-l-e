@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src='../scripts/results.js'></script>
+    <script src="https://kit.fontawesome.com/440a91449a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/slider.css">
+    <title>Slider</title>
+  </head>
+  <body>
+
+
+
+ <form action="{{link}}" method="post">
+   <br>
+   <br>
+   <div class ="d-flex flex-row bd-highlight justify-content-between">
+     <div class="d-flex flex-column bd-highlight mb-3 justify-content-center"></div>
+     <div class="d-flex flex-column bd-highlight mb-3 justify-content-center">
+       <div class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+         <p> how are you feeling? </p>
+       </div>
+
+       <div class="d-flex flex-column mb-3 bd-highlight justify-content-center">
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <label for="anger">anger</label>
+         </div>
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <input type="range" class="custom-range" id="anger" value={{angry}} name="anger" >
+         </div>
+       </div>
+
+       <div class="d-flex flex-column mb-3 bd-highlight justify-content-center">
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <label for="sadness">sadness</label>
+         </div>
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <input type="range" class="custom-range" id="sadness" value={{sad}} name="sadness">
+         </div>
+       </div>
+
+       <div class="d-flex flex-column mb-3 bd-highlight justify-content-center">
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <label for="confusion">confusion</label>
+         </div>
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <input type="range" class="custom-range" id="confusion" value={{confused}} name="confusion">
+         </div>
+       </div>
+
+       <div class="d-flex flex-column mb-3 bd-highlight justify-content-center">
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <label for="happiness">happiness</label>
+         </div>
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <input type="range" class="custom-range" id="happiness" value={{happy}} name="happiness">
+         </div>
+       </div>
+
+       <div class="d-flex flex-column mb-3 bd-highlight justify-content-center">
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <label for="anxiety">anxiety</label>
+         </div>
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <input type="range" class="custom-range" id="anxiety" value={{worried}} name="anxiety">
+         </div>
+       </div>
+
+       <div class="d-flex flex-column mb-3 bd-highlight justify-content-center">
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <label for="embarrassment">embarrassment</label>
+         </div>
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <input type="range" class="custom-range" id="embarrassment" value={{embarrassed}} name="embarassment">
+         </div>
+       </div>
+
+       <div class="d-flex flex-column mb-5 bd-highlight justify-content-center">
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <label for="tired">tired</label>
+         </div>
+         <div class="bd-highlight d-flex justify-content-center"><br>
+           <input type="range" class="custom-range" id="tired" value={{tired}} name="tired">
+         </div>
+       </div>
+       <input class="button_submit_now" type ="submit" id="submitbtn" value="finish editing" />
+     </div>
+    <div class="d-flex flex-column bd-highlight mb-3 justify-content-center"></div>
+
+<script>
+  function myFunction() {
+    var a = document.getElementById("angry");
+    var s = document.getElementById("sadness");
+    var t = document.getElementById("tired");
+    var e = document.getElementById("embarrassment");
+    var h = document.getElementById("happiness");
+    var c = document.getElementById("confusion");
+    var anx = document.getElementById("anxiety");
+  }
+</script>
+
+    <!-- <input type="range" id="start" name="anger"
+           min="0" max="11">
+    <label for="anger">anger</label> -->
+<!--
+    <input type="range" id="start" name="sadness"
+           min="0" max="11">
+    <label for="sadness">sadness</label>
+
+    <input type="range" id="start" name="confusion"
+           min="0" max="11">
+    <label for="confusion">confusion</label>
+
+    <input type="range" id="start" name="happiness"
+           min="0" max="11">
+    <label for="happiness">happiness</label>
+
+    <input type="range" id="start" name="anxiety"
+           min="0" max="11">
+    <label for="anxiety">anxiety</label>
+
+    <input type="range" id="start" name="embarassment"
+           min="0" max="11">
+    <label for="embarassment">embarassment</label>
+
+    <input type="range" id="start" name="tired"
+           min="0" max="11">
+    <label for="tired">tired</label> -->
+
+  </div>
+  <!-- name=... get it in journal -->
+
+ </form>
+  </body>
+</html>

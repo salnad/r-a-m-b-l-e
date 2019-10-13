@@ -1,0 +1,19 @@
+.jumbotron{
+  margin: 10% 20% auto 20%;
+}
+.btn-grad {
+  background-image: linear-gradient(to right, #3D7EAA 0%, #FFE47A 100%);
+  display: inline-block;
+  text-decoration: none;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  transition: .4s;
+}
+.btn-grad:hover {
+  background-position: right center;
+}

@@ -1,0 +1,98 @@
+.btn{
+  display: inline-block;
+  text-decoration: none;
+  background: #87befd;
+  color: #FFF;
+  width: 420px;
+  height: 420px;
+  line-height: 420px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  transition: .4s;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#bigBtn:hover{
+  border: black;
+  border-width: 3px;
+}
+
+#bigBtn{
+  font-size: 50px;
+}
+
+.about-sec{
+  width: 60%;
+}
+
+.wrapper {
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: relative;
+background: linear-gradient(124deg, #2b93fe, #d8d86d, #ff8787,  #c187ff, #87ff87, #ff8cff, #b7b7b7);
+background-size: 1800% 1800%;
+
+-webkit-animation: rainbow 100s ease infinite;
+-z-animation: rainbow 100s ease infinite;
+-o-animation: rainbow 100s ease infinite;
+  animation: rainbow 100s ease infinite;}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+#first-view{
+  height: 96%;
+}
+
+body,html{
+  height: 100%
+}
+
+#sad-col{
+  background: rgb(204, 229, 255);
+}
+#angry-col{
+  background: rgb(255, 204, 204);
+}
+#worried-col{
+  background: rgb(229, 204, 255);
+}
+#confused-col{
+  background: rgb(204, 255, 204);
+}
+#embarrassed-col{
+  background: rgb(255, 210, 255);
+}
+#tired-col{
+  background: rgb(216, 216, 216);
+}
+#happy-col{
+  background: rgb(255,255,204);
+}
+
+.color-col{
+  width: 14.29%;
+}

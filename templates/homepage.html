@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/440a91449a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/homepage.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <title>Home</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+      <div class='nav-section'><!-- left side of nav bar-->
+        <a class="navbar-brand" href="register" {{ hideLogIn }}>log in</a>
+        <a {{ hideLogOut }} class="navbar-brand" href={{ logout_url }} >log out</a>
+      </div>
+
+      <a class="nav-link" id="rambleBtn" href="/"> r a m b l e <span class="sr-only">(current)</span></a>
+      <div {{ hideLogOut }} class = "nav-section justify-content-end d-flex flex-row"><!-- right side of nav bar-->
+        <!-- <a class="navbar-brand" href="acct">Profile</a> -->
+        {{ first_name }} {{last_name}}
+        <a {{ hideLogOut }} href = "account"> <i class ="far fa-user fa-2x"></i></a>
+      </div>
+    </nav>
+    <br><br>
+    <div id='first-view' class="d-flex flex-column bd-highlight mb-3 justify-content-begin">
+      <!-- <div class="p-2 bd-highlight"> -->
+        <a href="ramble" class="btn wrapper" id="bigBtn"><p class = "wrapper_text">r a m b l e</p></a>
+      <!-- </div> -->
+
+
+
+
+
+    </div>
+
+    <hr class='my-4'> <br>
+    <div class="d-flex flex-row bd-highlight justify-content-center"><h2 class="fs-title"> a b o u t </h2></div>
+    <div class="d-flex flex-row bd-highlight p-3 justify-content-center">
+      <div class="about-sec container">
+        <p> ramble is a web application that allows you to unload the overwhelming stressors and problems of the day, increasing times of mindfulness and peace through its speech-to-text function, aesthetically-calming color hues representing your tone of the day, and intuitive statistics for deep reflections.
+        </p>
+
+        <p> <strong>s p e e c h - t o - t e x t</strong> <br>
+            have somebody to talk to - always. no matter where and when you are, ramble is always available to hear you out and help you record your thoughts through our impeccable speech-to-text function.  talk your thoughts out; read over your rambles and refocus your mind.
+        </p>
+
+        <p> <strong>i n t u i t i v e &nbsp s t a t i s t i c s</strong> <br>
+          reflect on your progress as a thinker, feeler, and grower. ramble offers intuitive statistics for users, allowing them to see overarching tone patterns in the long-term. reflection is easy with ramble. it tracks everything and never forgets.
+
+      </p>
+
+        <p> <strong>a e s t h e t i c a l l y - c a l m i n g &nbsp  c o l o r &nbsp  s c h e m e</strong> <br>
+        to match your tone of the journal, ramble automatically generates a beautiful color gradient for the background of your journal entries. quickly gaze over your journals to see your general tones for the days, weeks, and months. pick out certain entries with stronger emotions and reflect back onto the day.
+      </p>
+      <table class="table">
+      </div>
+      </div>
+
+<table class="table">
+  <tbody>
+    <tr>
+      <!-- <th scope="row">1</th> -->
+      <td class="color-col" id='angry-col'>angry</td>
+      <td class="color-col" id='happy-col'>happy</td>
+      <td class="color-col" id='confused-col'>confused</td>
+      <td class="color-col" id='sad-col'>sad</td>
+      <td class="color-col" id='worried-col'>worried</td>
+      <td class="color-col" id='embarrassed-col'>embarrassed</td>
+      <td class="color-col" id='tired-col'>tired</td>
+    <!-- </tr> -->
+  </tbody>
+</table>
+<br><br><br>
+
+
+  </body>
+</html>

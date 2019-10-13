@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/440a91449a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/register.css">
+    <script type="text/javascript" src='../scripts/ramble.js'>
+
+    </script>
+    <title>Register Page</title>
+  </head>
+<body>
+
+  <!-- multistep form -->
+
+    <!-- fieldsets -->
+    <fieldset>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        <div class='nav-section'><!-- left side of nav bar-->
+          <a class="navbar-brand" href="register" {{ hideLogIn }}>log in</a>
+          <a {{ hideLogOut }} class="navbar-brand" href={{ logout_url }} >log out</a>
+        </div>
+
+        <a class="nav-link" id="rambleBtn" href="/"> r a m b l e <span class="sr-only">(current)</span></a>
+        <div class = "nav-section justify-content-end d-flex flex-row"><!-- right side of nav bar-->
+          <!-- <a class="navbar-brand" href="acct">Profile</a> -->
+          {{ first_name }} {{last_name}}
+          <a {{ hideLogOut }} href = "account"> <i class ="far fa-user fa-2x"></i></a>
+        </div>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <div class="d-flex flex-column bd-highlight mb-3 justify-content-center">
+        <div class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+          <h2 class="fs-title"> r e g i s t e r </h2>
+        </div>
+        <!-- <a href="/"> <h3 class="fs-subtitle">Home</h3> </a> -->
+        <!-- <input type="text" name="email" placeholder="You are a new user, please register." /> -->
+        {%if user%}
+        {%if not existing_user %}
+          <div class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+            <!-- <p> Please provide further information: </p>  -->
+            <!-- gives user form to enter first and last name for their account -->
+          </div>
+            <form method="post" action="/register">
+              <div class="d-flex flex-row bd-highlight justify-content-center">
+                <div class="bd-highlight"><input type="text" placeholder = "first name" class="form-control" name="firstname"><br></div>
+              </div>
+              <div class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+                <div class="bd-highlight"><input type="text" placeholder = "last name" class="form-control" name="lastname"><br></div>
+              </div>
+              <div class="d-flex flex-row bd-highlight justify-content-center">
+                <input class="btn " type="submit" id='submitbtn' value="submit"><br>
+              </div>
+            </form>
+            <div class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+            </div>
+          </div>
+      {%endif%}
+      <!-- <div class="d-flex flex-row bd-highlight mb-3 justify-content-center"> -->
+
+      {%endif%}
+
+    <!-- <div class="div3"> -->
+      <!-- <input type="password" name="cpass" placeholder="Confirm Password" /> -->
+      <!-- <input type="button" name="next" class="next action-button" value="Next" /> -->
+    </fieldset>
+
+</body>
+</html>

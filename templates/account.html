@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/440a91449a.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src='../scripts/account.js'>  </script>
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/account.css">
+    <title>Your Account</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+      <div class='nav-section'><!-- left side of nav bar-->
+        <a class="navbar-brand" href="register" {{ hideLogIn }}>log in</a>
+        <a {{ hideLogOut }} class="navbar-brand" href={{ logout_url }} >log out</a>
+      </div>
+
+      <a class="nav-link" id="rambleBtn" href="/"> r a m b l e <span class="sr-only">(current)</span></a>
+      <div class = "nav-section justify-content-end d-flex flex-row"><!-- right side of nav bar-->
+        <!-- <a class="navbar-brand" href="acct">Profile</a> -->
+        {{ first_name }} {{last_name}}
+        <a {{ hideLogOut }} href = "account"> <i class ="far fa-user fa-2x"></i></a>
+      </div>
+    </nav>
+    <!-- <div class="">
+      <a href="/ramble"> Ramble </a>
+    </div> -->
+    <br>
+    <br>
+    <div class="d-flex flex-column bd-highlight mb-3 justify-content-center">
+      <div class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+        <h1>{{firstName}} {{lastName}}</h1>
+
+      </div>
+      <div class="d-flex flex-row bd-highlight mb-3 justify-content-center align-items-end">
+      <a href = "stats"> <i id="stats-icon" class ="fas fa-chart-bar fa-2x"></i></a>
+      <p hidden id='stats-label'>see your stats</p>
+    </div>
+
+    </div>
+
+    <div class="container d-flex align-content-center">
+        {% for n in journal_query %}
+        {% if loop.index % 3 == 1 %}
+          </div>
+          <div class = "row  d-flex justify-content-center">
+        {% endif %}
+
+        <div class ="col-md-3 d-flex justify-content-center" style = "margin: 2%;">
+          <form onsubmit="return confirm('Do you really want to submit the form?');" method = "post" action = "account">
+            <a style = "text-decoration: none; color: black;" href="/journal?key={{journal_keys[loop.index - 1]}}">
+            <div class="card entryCard" style = "width: 15em; height: 15em; background: rgb(255,255,255); background: linear-gradient(45deg, rgba({{n.rgb1[0]}},{{n.rgb1[1]}},{{n.rgb1[2]}},0.75) 35%, rgba({{n.rgb2[0]}},{{n.rgb2[1]}},{{n.rgb2[2]}},0.75) 100%); border-color: #d3d3d3;">
+                  <input class = "d-flex justify-self-right align-self-start btn btn-outline-dark" style = "font-size: 15%; padding: 2px 5px; margin: 0 0; border-color: transparent;" type="submit" name="submit" value="x">
+                  <input name = "key_value" type = "hidden" value = '{{journal_keys[loop.index-1]}}'/>
+
+                  <div class="card-body d-flex flex-column justify-content-center align-items-center" style = "border-color: transparent;">
+                    <p id="strDate">{{journal_dates[loop.index - 1]}}</p>
+                    <p id="strTime">{{journal_times[loop.index - 1]}}</p>
+                  </div>
+                </div>
+              </a>
+              </form>
+            </div>
+        {% endfor %}
+        {% if journal_query|length % 3 != 0 %}
+          {% for i in range(3 - (journal_query|length % 3)) %}
+          <div class ="col-md-3" style = "margin: 2%;">
+              <div class="card d-flex justify-content-center" style = "width: 15em; height: 15em; border-color: transparent;">
+                  <div class="card-body" style = "border-color: transparent;">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                  </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+    </div>
+ <!-- create a header, every journal query has to be a post function-->
+
+  </body>
+
+</html>

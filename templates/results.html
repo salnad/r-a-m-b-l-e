@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script type="text/javascript" src='../scripts/results.js'></script>
+  <script src="https://kit.fontawesome.com/440a91449a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../CSS/results.css">
+  <link rel="stylesheet" href="../CSS/navbar.css">
+  <title>Your Results</title>
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+      <div class='nav-section'><!-- left side of nav bar-->
+        <a class="navbar-brand" href="register" {{ hideLogIn }}>log in</a>
+        <a {{ hideLogOut }} class="navbar-brand" href={{ logout_url }} >log out</a>
+      </div>
+
+      <a class="nav-link" id="rambleBtn" href="/"> r a m b l e <span class="sr-only">(current)</span></a>
+      <div class = "nav-section justify-content-end d-flex flex-row"><!-- right side of nav bar-->
+        <!-- <a class="navbar-brand" href="acct">Profile</a> -->
+        {{ first_name }} {{last_name}}
+        <a {{ hideLogOut }} href = "account"> <i class ="far fa-user fa-2x"></i></a>
+      </div>
+    </nav>
+    <div class="jumbotron">
+      <h1 class="display-4">Usuers' title</h1>
+      <div class="">{{word_count}}
+
+      </div>
+      <hr class="my-4">
+      <h1 class="display-4">Analysis of Your Entry</h1>
+      <ul>
+        <li>
+          <p><strong>Word count: </strong> {{word_count}} </p>
+        </li>
+        <li>
+          <p><strong>Top two emotions: </strong> {{top1}} and {{top2}}
+          <span>    <button  class="btn-grad">Gradient button</button> </span> </p>
+
+        </li>
+      </ul>
+
+    </div>
+  </body>
+</html>
